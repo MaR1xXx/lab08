@@ -1,0 +1,21 @@
+name: CMake
+
+on:
+ push:
+  branches: [main]
+ pull_request:
+  branches: [main]
+
+jobs: 
+ build_Linux:
+
+  runs-on: ubuntu-latest
+
+  steps:
+  - uses: actions/checkout@v3
+
+  - name: Install Docker
+    run: sudo apt install runc containerd docker.io
+
+  - name: Run Docker
+    run: sudo docker build -t logger .
