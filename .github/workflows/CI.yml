@@ -20,7 +20,7 @@ jobs:
   - name: Run Docker
     run: |
        docker run -it -v "$(pwd)/logs/:/home/logs/" logger
-       ls "$(pwd)/logs/:/home/logs/"
+       ls -it -v "$(pwd)/logs/:/home/logs/" logger
 
 
   - name: Upload Artifact
