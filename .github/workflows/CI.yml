@@ -19,3 +19,9 @@ jobs:
 
   - name: Run Docker
     run: sudo docker build -t logger .
+
+  - name: Upload Artifact
+    uses: actions/upload-artifact@v2
+    with:
+        name: executable
+        path: ${{github.workspace}}
