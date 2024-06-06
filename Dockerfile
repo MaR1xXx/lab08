@@ -11,8 +11,10 @@ RUN cmake --build _build
 
 ENV LOG_PATH /home/logs/log.txt
 
-VOLUME /home/logs
+VOLUME /home/log/
+
+RUN echo test > /home/log/log.txt
 
 WORKDIR _install/bin
 
-ENTRYPOINT ./demo
+ENTRYPOINT /bin/ls
