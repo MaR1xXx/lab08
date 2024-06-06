@@ -4,5 +4,8 @@
 
 int main()
 {
-    formatter("hello, world!" > log.txt);
+    std::ofstream out;
+    out.open("log.txt");
+    out << "hello, world!" << std::endl;
+    out.close();
 }
